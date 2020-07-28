@@ -1,16 +1,40 @@
 # Django
 from django.shortcuts import render
-from admins.models import Reserva,Anuncios,Promocion
+from admins.models import Reserva, Anuncios, Promocion
 
-def HouseTime(request):
+
+def QuienesSomos(request):
+    return render( request, 'housetime/quienes_somos.html' )
+
+"""
+def Anuncios(request):
+    return render( request, 'housetime/anuncios.html' )
+
+def Contacto(request):
+    return render(request, 'housetime/contacto.html')
+
+
+def Promociones(request):
+    return render(request, 'housetime/promociones.html')
+
+def Blog(request):
+    return render(request, 'housetime/blog.html')
+
+
+def CompraDetalle(request):
+    return render(request, 'housetime/anuncio_detalle.html')
+"""
+
+def housetime(request):
+
     cantClientes = Reserva.objects.count()
-    cantCasas = Anuncios.objects.filter(id_tipo=1).count()
     cantDepartamentos = Anuncios.objects.filter(id_tipo=2).count()
+    cantCasas = Anuncios.objects.filter(id_tipo=1).count()
     cantPromociones = Promocion.objects.count()
 
     inventario = [
         {
-            'clientes':  Reserva.objects.count(),
+            'clientes': cantClientes,
             'casas': cantCasas,
             'departamentos': cantDepartamentos,
             'promociones': cantPromociones,

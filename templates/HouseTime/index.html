@@ -19,7 +19,7 @@
     <!-- Header -->
     <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{% url 'housetime' %}">
                 <h4>House Time</h4>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="quienes_somos.html">Quienes Somos</a>
+                        <a class="nav-link" href="{% url 'aboutus' %}">Quienes Somos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="anuncios.html">Anuncios</a>
