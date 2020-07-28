@@ -1,6 +1,5 @@
 $(function() {
-    $('#clientes').animateNumber({ number: 120 }, 12000);
-    $('#viajes').animateNumber({ number: 2500 }, 6000);
-    $('#paquetes').animateNumber({ number: 50 }, 25000);
-    $('#promociones').animateNumber({ number: 20 }, 30000);
+    $('#viajes').animateNumber({ number: parseFloat(viajes2.value) }, 6000);
+    $('#paquetes').animateNumber({ number: parseFloat(paquetes2.value) }, 25000);
+    $('#promociones').animateNumber({ number: parseFloat(promociones2.value) }, 30000);
 });

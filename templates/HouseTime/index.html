@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>House Time</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <h4>House Time</h4>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="quienes_somos.html">Quienes Somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anuncios.html">Anuncios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="promociones.html">Promociones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Header -->
+
+    <!-- Main -->
+    <section id="main">
+        <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel" data-pause="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active perro" style="background-image: url('imagenes/fondo.jpg')">
+                    <img class="d-block w-100" src="imagenes/logo_oficial.svg" alt="logo">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel2">
+                            <h3>Pensando Diferente</h3>
+                            <p>"La comodidad y seguridad nuestra mayor prioridad"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item gato">
+                    <img class="d-block w-100" src="imagenes/portada2.png" alt="portada2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel2">
+                            <h3>Confianza</h3>
+                            <p>Sientete seguro en tu alojamiento.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item gato">
+                    <img class="d-block w-100" src="imagenes/portada3.png" alt="portada3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel2">
+                            <h3>¿Estamos lejos?</h3>
+                            <p>Estamos a un click de distancia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Main -->
+
+    <!-- Que ofrecemos -->
+
+    <section class="mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2>Busca o Cotiza tu lugar favorito</h2>
+                    <p class="text-justify">House Time te ofrece departamentos y casas ubicadas en los principales sitios turisticos del pais, aseguramos tu confort y seguridad a la hora de escoger una opcion. Puedes buscar el sitio en el que deseas hosedarte y cotizar segun
+                        tus preferencias.
+                    </p>
+                    <p class="text-justify">No esperes mas y reserva ahora.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h2>Disfruta de nuestras promociones</h2>
+                    <p>Contamos con departamentos y casas de alquiler en:</p>
+                    <h2>Ecuador</h2>
+                    <ul>
+                        <li>Costa</li>
+                        <li>Sierra</li>
+                        <li>Amazonia</li>
+                        <li>Region Insuar</li>
+                    </ul>
+                    <p class="text-justify">Disfruta del nuestros servicios con la comodidad y seguridad que solo House Time puede brindarte, reserva en cualquier momento a cualquier hora del dia, recuerda estammos a solo un click de distancia. No esperes mas y resarva ahora
+                        y disfruta de nuestras promociones frecuentes.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- End Que ofrecemos -->
+
+    <!-- Cantidades -->
+    <div class="jquery">
+        <input type="text" id="clientes2" value="120">
+        <input type="text" id="viajes2" value="3500">
+        <input type="text" id="paquetes2" value="50">
+        <input type="text" id="promociones2" value="20">
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-3 mb-4 text-center">
+                <p id="clientes" class="valores display-3"></p>
+                <h3 class="text-center">Clientes</h3>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 mb-4 text-center">
+                <p id="viajes" class="valores display-3"></p>
+                <h3 class="text-center">Casas</h3>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 mb-4 text-center">
+                <p id="paquetes" class="valores display-3"></p>
+                <h3 class="text-center">Departamentos</h3>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 mb-4 text-center">
+                <p id="promociones" class="valores display-3"></p>
+                <h3 class="text-center">Promociones</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Cantidades -->
+
+
+
+    <!-- Footer -->
+    <footer id="footer" class="pb-4 pt-4">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; House Time 2020</p>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+    <script text="text/javascript" src="js/jquey-3.5.1.slim.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script text="text/javascript" src="js/jquery.animateNumber.js"></script>
+    <script text="text/javascript" src="js/script_jquery.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/mapa.js"></script>
+</body>
+
+</html>

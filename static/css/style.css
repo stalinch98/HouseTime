@@ -71,14 +71,18 @@
 
 /*Diseñose del blog*/
 
-.text-blog{
+.text-blog {
     color: white;
-    
 }
+
+
 /*Carousel del blog */
 .carousel-blog img {
     height: 100%;
     object-fit: cover;
     filter: grayscale(70%);
+}
 
+.jquery {
+    display: none;
 }
