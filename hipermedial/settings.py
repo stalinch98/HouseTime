@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'hipermedial.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'proyecto',
+        'NAME': 'proyecto_integrador',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
