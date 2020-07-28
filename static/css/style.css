@@ -1,0 +1,89 @@
+.gato img {
+    max-height: 70vh;
+    object-fit: cover;
+}
+
+.perro img {
+    max-height: 70vh;
+}
+
+.carousel2 {
+    color: black;
+    font-weight: bold;
+}
+
+#footer {
+    background: linear-gradient(90deg, #1c3643, #273b47 25%, #1e5372);
+}
+
+#footer a {
+    color: #fff;
+}
+
+#map {
+    height: 15rem;
+}
+
+.coordenadas {
+    display: none;
+}
+
+#nombre {
+    display: none;
+}
+
+#precio {
+    display: none;
+}
+
+#fecha {
+    display: none;
+}
+
+#ubicacion {
+    display: none;
+}
+
+#servicios {
+    display: none;
+}
+
+#capacidad {
+    display: none;
+}
+
+
+/*Esilos del carrusel del blog */
+
+
+/*Modificamos la imagen del carousel*/
+.carousel-auncios img {
+    height: 200px !important;
+    object-fit: cover;
+}
+
+
+/*Valores */
+
+.valores {
+    color: orangered;
+}
+
+
+/*Diseñose del blog*/
+
+.text-blog {
+    color: white;
+}
+
+
+/*Carousel del blog */
+.carousel-blog img {
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(70%);
+}
+
+.jquery {
+    display: none;
+}
