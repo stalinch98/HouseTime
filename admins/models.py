@@ -39,7 +39,7 @@ class Tipo(models.Model):
 
 
 class Ubicacion(models.Model):
-    id_ubicacion = models.IntegerField(primary_key=True)
+    id_ubicacion = models.AutoField(primary_key=True)
     latitud = models.FloatField()
     longitud = models.FloatField()
     nombre_ubicacion = models.CharField(max_length=100)
