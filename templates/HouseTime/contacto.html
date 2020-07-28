@@ -7,7 +7,7 @@
     {% load static %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>HouseTime Contact</title>
 </head>
 
@@ -150,12 +150,12 @@
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
         crossorigin=""></script>
-<script text="text/javascript" src="js/jquey-3.5.1.slim.js"></script>
+<script text="text/javascript" src="{% static 'js/jquey-3.5.1.slim.js' %}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script text="text/javascript" src="js/jquery.animateNumber.js"></script>
-<script text="text/javascript" src="js/script_jquery.js"></script>
-<script src="js/script.js"></script>
-<script src="js/mapa.js"></script>
+<script text="text/javascript" src="{% static 'js/jquery.animateNumber.js' %}"></script>
+<script text="text/javascript" src="{% static 'js/script_jquery.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/mapa.js' %}"></script>
 </body>
 
 </html>

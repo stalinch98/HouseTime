@@ -53,6 +53,7 @@
 <!-- End Header -->
 
 <!-- Main -->
+{% for i in datos %}
 <div class="container mt-4">
     <div class="row">
         <div class="col-12 col-sm-6">
@@ -60,19 +61,7 @@
         </div>
         <div class="col-12 col-sm-6">
             <h2 class="text-center">Mision</h2>
-            <p class="text-justify"> La empresa brinda una asistencia profesional a todos aquellos que necesiten de un
-                servicio de alojamiento en sus viajes. El esfuerzo de la empresa se centrara en brindar las mejores
-                opciones en las que la comodidad y satisfaccion a nuestros
-                clientes sean pilar fundamental del trabajo realizado por cada uno de los integrantes de la empresa
-                quienes con el mejor asesoramiento,compromiso,precio,solucion de posibles inconvenientes (antes, durante
-                o despues de cada alojamiento).
-                Brindamos un servicio a medida,tanto para pasajeros individuales, grupos o familias ya sea viajen por
-                placer o negocios. La capacidad de nuestro personal para brindar respuestas adecuadas,forma parte de
-                nuestras fortalezas, haciendo
-                seguimiento permanente sobre las operaciones que se efectúan. Nuestra principal herramienta es el acceso
-                directo a la informacion a travez de nuestra pagina web. El manejo adecuado de bases de datos obtenidas
-                de nuestros clientes,
-                hace mas dinámica la gestión comercial.</p>
+            <p class="text-justify">{{ i.mision }}</p>
         </div>
     </div>
     <div class="row">
@@ -81,16 +70,11 @@
         </div>
         <div class="col-12 col-sm-6">
             <h2 class="text-center">Vision</h2>
-            <p class="text-justify">Promover el crecimiento sustentable de la empresa, basado en la innovacion
-                permanente tanto en la prestacion de servicios, el acercamiento a los clientes, la calidad de
-                informacion brindada, el asesoramiento adecuado para cada necesidad.
-                Lograr una empresa que sea flexible a los cambios que el mercado y los clientes requieren. Fortalecer en
-                forma constante la inversion en tecnología para el desarollo de nuestra actividad consolidandonos como
-                una la mejor empresa nacional.
-            </p>
+            <p class="text-justify">{{ i.vision }}</p>
         </div>
     </div>
 </div>
+{% endfor %}
 <!-- End Main -->
 
 <!-- Equipo -->

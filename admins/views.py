@@ -1,10 +1,26 @@
 # Django
 from django.shortcuts import render
-from admins.models import Reserva as r, Anuncios as a, Promocion as p
+from admins.models import Reserva as r, Anuncios as a, Promocion as p, Empresa as emp
 
 
 def QuienesSomos(request):
-    return render( request, 'housetime/quienes_somos.html' )
+    mision = emp.objects.values( 'mision' )
+    vision = emp.objects.values( 'vision' )
+
+    for i in mision[0].values():
+        mision2 = i
+
+    for i in vision[0].values():
+        vision2 = i
+
+    datos = [
+        {
+            'mision': mision2,
+            'vision': vision2
+        }
+    ]
+
+    return render( request, 'housetime/quienes_somos.html', {'datos': datos} )
 
 
 def Anuncios(request):
