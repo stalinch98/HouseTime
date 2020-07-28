@@ -123,10 +123,12 @@
 
     <!-- Cantidades -->
     <div class="jquery">
-        <input type="text" id="clientes2" value="120">
-        <input type="text" id="viajes2" value="3500">
-        <input type="text" id="paquetes2" value="50">
-        <input type="text" id="promociones2" value="20">
+        {% for i in inventario %}
+        <input type="text" id="clientes2" value="{{ i.clientes }}">
+        <input type="text" id="viajes2" value="{{ i.casas }}">
+        <input type="text" id="paquetes2" value="{{ i.departamentos }}">
+        <input type="text" id="promociones2" value="{{ i.promociones }}">
+        {% endfor %}
     </div>
 
     <div class="container mt-4">
