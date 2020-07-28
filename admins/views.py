@@ -1,3 +1,7 @@
+# Django
 from django.shortcuts import render
 
-# Create your views here.
+
+def HouseTime(request):
+
+    return render(request, 'housetime/index.html')
