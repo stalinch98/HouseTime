@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'proyecto_integrador',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'toor',
         'HOST': 'localhost',
         'PORT': 3306,
     }

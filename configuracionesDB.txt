@@ -1,0 +1,7 @@
+#poner estas configuraciones a mi alrchivo init y setting -Furok
+
+import pymysql
+pymysql.install_as_MySQLdb()
+
+#poner la clave en setting
+toor
