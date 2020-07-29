@@ -37,7 +37,7 @@ def Promociones(request):
 
 def Blog(request):
     descripcion = emp.objects.values( 'descripcion_blog' )
-    opiniones = bl.objects.values('nombre_usuario','comentarios')
+    opiniones = bl.objects.values('nombre_usuario','comentarios').order_by('-id_blog')
 
     for i in descripcion[0].values():
         descripcion2 = i
