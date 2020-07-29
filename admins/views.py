@@ -1,7 +1,6 @@
 # Django
-from django.shortcuts import render
-from admins.models import Reserva as r, Anuncios as a, Promocion as p, Empresa as emp
-
+from django.shortcuts import render, redirect
+from admins.models import Reserva as r, Anuncios as a, Promocion as p, Empresa as emp, Contacto as contact
 
 def QuienesSomos(request):
     mision = emp.objects.values( 'mision' )
@@ -26,10 +25,8 @@ def QuienesSomos(request):
 def Anuncios(request):
     return render( request, 'housetime/anuncios.html' )
 
-
 def Contacto(request):
     return render( request, 'housetime/contacto.html' )
-
 
 def Promociones(request):
     return render( request, 'housetime/promociones.html' )
@@ -59,3 +56,18 @@ def get_housetime(request):
     ]
 
     return render( request, 'housetime/index.html', {'inventario': inventario} )
+
+
+def savecontact(request):
+    contacto = contact()
+    if request.method == 'POST':
+        contacto.nombre_usuario = request.POST['nombre']
+        contacto.celular = request.POST['telefono']
+        contacto.email = request.POST['email']
+        contacto.mensaje = request.POST['mensaje']
+        contacto.save()
+        return redirect( 'housetime' )
+    else:
+        form = contact()
+
+    return render( request, 'housetime/contacto.html' )

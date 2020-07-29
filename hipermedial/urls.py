@@ -14,4 +14,5 @@ urlpatterns = [
     path( 'housetime/promociones/', views.Promociones, name="promociones" ),
     path( 'housetime/blog/', views.Blog, name="blog" ),
     path( 'housetime/compra-detalle/', views.CompraDetalle, name="compra-detalle" ),
+    path( 'housetime/new-comment/', views.savecontact, name="nuevo-comentario" ),
 ]

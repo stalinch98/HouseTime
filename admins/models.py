@@ -4,7 +4,7 @@ from django.db import models
 class Contacto( models.Model ):
     id_contacto = models.AutoField( primary_key=True )
     nombre_usuario = models.CharField( max_length=100 )
-    celular = models.IntegerField()
+    celular = models.CharField( max_length=10 )
     email = models.CharField( max_length=100 )
     mensaje = models.CharField( max_length=800 )
 
