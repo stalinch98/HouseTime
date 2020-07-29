@@ -1,6 +1,7 @@
 # Django
 from django.shortcuts import render, redirect
-from admins.models import Reserva as r, Anuncios as a, Promocion as p, Empresa as emp, Contacto as contact
+from admins.models import Reserva as r, Anuncios as a, Promocion as p, Empresa as emp, Contacto as contact, Blog as bl
+
 
 def QuienesSomos(request):
     mision = emp.objects.values( 'mision' )
@@ -25,15 +26,28 @@ def QuienesSomos(request):
 def Anuncios(request):
     return render( request, 'housetime/anuncios.html' )
 
+
 def Contacto(request):
     return render( request, 'housetime/contacto.html' )
+
 
 def Promociones(request):
     return render( request, 'housetime/promociones.html' )
 
 
 def Blog(request):
-    return render( request, 'housetime/blog.html' )
+    descripcion = emp.objects.values( 'descripcion_blog' )
+    opiniones = bl.objects.values('nombre_usuario','comentarios')
+
+    for i in descripcion[0].values():
+        descripcion2 = i
+
+    blog = [
+        {
+            'blog': descripcion2,
+        }
+    ]
+    return render( request, 'housetime/blog.html', {'blog': blog, 'opiniones': opiniones} )
 
 
 def CompraDetalle(request):
@@ -68,6 +82,18 @@ def savecontact(request):
         contacto.save()
         return redirect( 'housetime' )
     else:
-        form = contact()
+        contacto = contact()
 
     return render( request, 'housetime/contacto.html' )
+
+def saveopinion(request):
+    blog = bl()
+    if request.method == 'POST':
+        blog.nombre_usuario = request.POST['nombre']
+        blog.comentarios = request.POST['mensaje']
+        blog.save()
+        return redirect( 'housetime' )
+    else:
+        blog = bl()
+
+    return render( request, 'housetime/blog.html' )

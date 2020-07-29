@@ -46,34 +46,28 @@
         </div>
     </nav>
 </header>
-
+{% for i in blog %}
 <main class="main" id="conf">
     <div id="carousel" class="carousel slide" data-ride="carousel" data-pause="false">
         <div class="carousel-inner carousel-blog">
             <div class="carousel-item active">
-                <img class="d-block w-100 img-fluid" src="{% static 'imagenes/deptartamento-blog-1.jpg' %}" alt="First slide">
+                <img class="d-block w-100 img-fluid" src="{% static 'imagenes/deptartamento-blog-1.jpg' %}"
+                     alt="First slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 img-fluid" src="{% static 'imagenes/deptartamento-blog-2.jpg' %}" alt="Second slide">
+                <img class="d-block w-100 img-fluid" src="{% static 'imagenes/deptartamento-blog-2.jpg' %}"
+                     alt="Second slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 img-fluid" src="{% static 'imagenes/deptartamento-blog-3.jpg' %}" alt="Third slide">
+                <img class="d-block w-100 img-fluid" src="{% static 'imagenes/deptartamento-blog-3.jpg' %}"
+                     alt="Third slide">
             </div>
             <div class="overlay mt-5">
                 <div class="container">
                     <div class="row aling-items-center mt-2">
                         <div class="col-md-6 text-center text-md-left">
                             <h1>HouseTime tu mejor opcion</h1>
-                            <p class="d-none d-md-block text-blog">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                Voluptates facere totam at reiciendis accusamus in iusto fugit ipsa,
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                Itaque, iusto excepturi cum nesciunt incidunt vel quos fuga dolorem accusantium,
-                                quaerat deserunt delectus.
-                                Repudiandae dolorum, expedita perspiciatis facere inventore maxime vero.
-                                iure tempora vero optio accusantium fuga cumque. Eveniet neque alias harum ut.
-                            </p>
-
+                            <p class="d-none d-md-block text-blog">{{ i.blog }}</p>
                         </div>
                     </div>
                 </div>
@@ -81,6 +75,7 @@
         </div>
     </div>
 </main>
+{% endfor %}
 <section class="comentarios mt-4">
     <div class="container-fluid">
         <div class="row ">
@@ -93,44 +88,51 @@
                         Dejanos tu opinion:
                     </div>
                     <div class="card-body">
-                        <form method="post"
-                        " action="blog.html ">
-                        <div class="form-group ">
-                            <label id="nombre-opinion ">Nombre</label>
-                            <input type="text " class="form-control " id="texto-opinion " placeholder="Nombre ">
-                        </div>
-                        <div class="control-group form-group ">
-                            <div class="controls ">
-                                <label>Mensaje:</label>
-                                <textarea rows="3 " cols="25 " class="form-control " id="message " required
-                                          data-validation-required-message="Please enter your message " maxlength="999 "
-                                          style="resize:none "></textarea>
+                        <form method="POST" action="{% url 'opiniones' %}">
+                            {% csrf_token %}
+                            <div class="form-group ">
+                                <label id="nombre-opinion ">Nombre</label>
+                                <input type="text " class="form-control " id="texto-opinion " placeholder="Nombre "
+                                       name="nombre">
                             </div>
-                        </div>
-                        <button type="submit " class="btn btn-primary " id="sendMessageButton ">Enviar Opinion</button>
+                            <div class="control-group form-group ">
+                                <div class="controls ">
+                                    <label>Mensaje:</label>
+                                    <textarea rows="3 " cols="25 " class="form-control " name="mensaje" id="message "
+                                              required
+                                              data-validation-required-message="Please enter your message "
+                                              maxlength="999 "
+                                              style="resize:none "></textarea>
+                                </div>
+                            </div>
+                            <button type="submit " class="btn btn-primary " id="sendMessageButton ">Enviar Opinion
+                            </button>
 
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+
+
         <div class="row mt-4">
             <div class="col-12 offset-lg-3 col-lg-6 ">
                 <h2>Opiniones</h2>
             </div>
+            {% for op in opiniones %}
             <div class="col-12 offset-lg-3 col-lg-6 mt-2">
                 <div class="card ">
                     <div class="card-header ">
                     </div>
                     <div class="card-body ">
-                        <img src="imagenes/icons8-person-64.png " alt="persona anonima " class="rounded-circle ">
-
-                        <h5 class="card-title ">titulo del comentario</h5>
-                        <p class="card-text ">Arrendar usando la pagina de HouseTime fue lo mejor</p>
+                        <h3>{{ op.nombre_usuario }}</h3>
+                        <p class="card-text ">{{ op.comentarios }}</p>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
+
     </div>
 
 </section>
