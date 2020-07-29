@@ -1,6 +1,6 @@
 # Django
 from django.shortcuts import render, redirect
-from admins.models import Reserva as r, Anuncios as a, Promocion as p, Empresa as emp, Contacto as contact, Blog as bl
+from admins.models import Reserva as r, Anuncios as a, Promocion as p, Empresa as emp, Contacto as contact, Blog as bl, Imagen as im
 
 
 def QuienesSomos(request):
@@ -24,7 +24,10 @@ def QuienesSomos(request):
 
 
 def Anuncios(request):
-    return render( request, 'housetime/anuncios.html' )
+    anuncios = a.objects.all().values()
+    imagenes = im.objects.all().values()
+
+    return render( request, 'housetime/anuncios.html', {'anuncios': anuncios, 'imagenes': imagenes} )
 
 
 def Contacto(request):
