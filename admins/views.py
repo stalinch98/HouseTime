@@ -1,6 +1,6 @@
 # Django
 from django.shortcuts import render, redirect
-from admins.models import Reserva as r, Anuncios as a, Promocion as p, Empresa as emp, Contacto as contact, Blog as bl, Imagen as im
+from admins.models import Reserva as r, Anuncios as a, Empresa as emp, Contacto as contact, Blog as bl, Imagen as im
 
 
 def QuienesSomos(request):
@@ -61,7 +61,7 @@ def get_housetime(request):
     cantClientes = r.objects.count()
     cantDepartamentos = a.objects.filter( id_tipo=2 ).count()
     cantCasas = a.objects.filter( id_tipo=1 ).count()
-    cantPromociones = p.objects.count()
+    cantPromociones = a.objects.filter( oferta=True ).count()
 
     inventario = [
         {

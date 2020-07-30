@@ -62,18 +62,13 @@ class Anuncios( models.Model ):
     servicios = models.CharField( max_length=200 )
     max_personas = models.IntegerField()
     precio_dia = models.FloatField()
-    reservado = models.IntegerField()
+    reservado = models.BooleanField( null=True )
     id_imagen = models.ForeignKey( 'Imagen', models.DO_NOTHING, db_column='id_imagen' )
     id_ubicacion = models.ForeignKey( 'Ubicacion', models.DO_NOTHING, db_column='id_ubicacion' )
     id_tipo = models.ForeignKey( Tipo, models.DO_NOTHING, db_column='id_tipo' )
-
-
-class Promocion( models.Model ):
-    id_promocion = models.AutoField( primary_key=True )
-    id_anuncio = models.ForeignKey( Anuncios, models.DO_NOTHING, db_column='id_anuncio' )
-    estado = models.BooleanField()
-    fecha_maxima = models.DateField()
-    precio_oferta = models.FloatField()
+    oferta = models.BooleanField( null=True )
+    fecha_maxima = models.DateField( blank=True, null=True )
+    precio_oferta = models.FloatField( blank=True, null=True )
 
 
 class Reserva( models.Model ):
