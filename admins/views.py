@@ -24,7 +24,7 @@ def QuienesSomos(request):
 
 
 def Anuncios(request):
-    anuncios = a.objects.all().values()
+    anuncios = a.objects.filter(oferta=0).values()
     imagenes = im.objects.all().values()
 
     return render( request, 'housetime/anuncios.html', {'anuncios': anuncios, 'imagenes': imagenes} )
@@ -35,7 +35,8 @@ def Contacto(request):
 
 
 def Promociones(request):
-    return render( request, 'housetime/promociones.html' )
+    promociones = a.objects.filter( oferta=1 ).values()
+    return render( request, 'housetime/promociones.html', {'promociones': promociones} )
 
 
 def Blog(request):
