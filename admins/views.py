@@ -64,7 +64,11 @@ def Blog(request):
 
 
 def CompraDetalle(request):
-    return render( request, 'housetime/anuncio_detalle.html' )
+    id = request.POST['id_anuncio']
+    anuncio = a.objects.filter( id_anuncio=id ).values()
+    coordenadas = ub.objects.filter( id_ubicacion=id ).values()
+    imagen = im.objects.filter( id_imagen=id ).values()
+    return render( request, 'housetime/anuncio_detalle.html', {'anuncio': anuncio, 'coordenadas': coordenadas,'imagen':imagen} )
 
 
 def get_housetime(request):

@@ -95,7 +95,15 @@
                         <div class="alert alert-warning" role="alert">
                             Valido hasta: {{ i.fecha_maxima }}
                         </div>
-                        <a href="{% url 'compra-detalle' %}" class="btn btn-primary btn-block">Detalles</a>
+                        <form method="POST" action="{% url 'compra-detalle' %}">
+                            {% csrf_token %}
+
+                            <div class="coordenadas">
+                                <input type="text" name="id_anuncio" value="{{ i.id_anuncio }}">
+                            </div>
+                            <button type="submit " class="btn btn-primary btn-block" id="sendMessageButton ">Detalles
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

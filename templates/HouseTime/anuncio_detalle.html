@@ -56,15 +56,15 @@
 
 <div class="container mt-4">
     <div class="row">
+        {% for j in anuncio %}
         <div class="col-12 col-sm-6">
-            <h1 class="text-center">Cerca de la Playa</h1>
-            <img class="img-fluid" src="imagenes/atacames.jpg" alt="">
+            {% for k in imagen %}
+            <img class="img-fluid" src="{% static 'imagenes/{{ k.nombre_imagen }}' %}" alt="">
+            {% endfor %}
         </div>
         <div class="col-12 col-sm-6">
-            <h3 class="my-3">Departamento en Atacames</h3>
-            <p>Disfruta de tus vacaciones en el mejor departamento en Atacames, ubicado a 20 metros de la playa, cuenta
-                con seguridad privada, aire acondicionado, piscina privada, area de distraccion.
-            </p>
+            <h3 class="my-3">{{ j.titulo }}</h3>
+            <p>{{ j.descripcion }}</p>
             <h3 class="my-3">Detalles</h3>
             <ul>
                 <li>Piscina</li>
@@ -73,11 +73,19 @@
                 <li>Amoblado</li>
                 <li>Cocina</li>
 
+                <p class="card-text">{{ j.ambientes }}</p>
+                <p class="card-text">{{ j.servicios }}</p>
+
             </ul>
-            <h3>Precio por dia: <span class="badge badge-secondary">25$</span></h3>
+            {% if j.precio_oferta != None %}
+            <h3>Precio de oferta: <span class="badge badge-secondary">{{ j.precio_oferta }}$</span></h3>
+            {% else %}
+            <h3>Precio por dia: <span class="badge badge-secondary">{{ j.precio_dia }}$</span></h3>
+            {% endif %}
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCompra">Arrendar
             </button>
         </div>
+        {% endfor %}
     </div>
     <div class="container mt-4">
         <div class="row">
@@ -85,8 +93,10 @@
                 <h3 class="text-center">Ubicacion</h3>
             </div>
             <div class="coordenadas">
-                <input type="text" id="latitud" value="51.505">
-                <input type="text" id="longitud" value="-0.09">
+                {% for i in coordenadas %}
+                <input type="text" id="latitud" value="{{ i.latitud }}">
+                <input type="text" id="longitud" value="{{ i.longitud }}">
+                {% endfor %}
             </div>
         </div>
     </div>

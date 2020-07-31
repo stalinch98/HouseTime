@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3f0782f9-01c5-48f4-b14c-e53224cabbc7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admins/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admins/migrations/0002_auto_20200730_1753.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admins/migrations/0003_auto_20200730_1754.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admins/migrations/0004_auto_20200730_1800.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admins/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/admins/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admins/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/admins/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hipermedial/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hipermedial/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/mapa.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/mapa.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

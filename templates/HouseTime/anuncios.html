@@ -144,7 +144,9 @@
                                         <select name="ubicacion" id="" class="form-control">
                                             <option class="form-control" value="">Selecciona una Ubicacion</option>
                                             {% for j in ubicaciones %}
-                                            <option class="form-control" value="{{ j.id_ubicacion }}">{{ j.nombre_ubicacion }}</option>
+                                            <option class="form-control" value="{{ j.id_ubicacion }}">{{
+                                                j.nombre_ubicacion }}
+                                            </option>
                                             {% endfor %}
                                         </select>
                                     </div>
@@ -263,7 +265,16 @@
 
                         <h5 class="card-title">{{ i.titulo }}</h5>
                         <p class="card-text">{{ i.descripcion }}</p>
-                        <a href="{% url 'compra-detalle' %}" class="btn btn-primary btn-block">Detalles</a>
+
+                        <form method="POST" action="{% url 'compra-detalle' %}">
+                            {% csrf_token %}
+
+                            <div class="coordenadas">
+                                <input type="text" name="id_anuncio" value="{{ i.id_anuncio }}">
+                            </div>
+                            <button type="submit " class="btn btn-primary btn-block" id="sendMessageButton ">Detalles
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -365,7 +376,8 @@
                         <label class="form-check-label" for="inlineCheckbox1">Piscina</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="Parqueadero" name="Parqueadero" value="Parqueadero">
+                        <input class="form-check-input" type="checkbox" id="Parqueadero" name="Parqueadero"
+                               value="Parqueadero">
                         <label class="form-check-label" for="inlineCheckbox2">Parqueadero</label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -373,7 +385,7 @@
                         <label class="form-check-label" for="inlineCheckbox2">Wifi</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="TV-Cable" name="TV-Cable"  value="TV-Cable">
+                        <input class="form-check-input" type="checkbox" id="TV-Cable" name="TV-Cable" value="TV-Cable">
                         <label class="form-check-label" for="inlineCheckbox2">TV-Cable</label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -381,11 +393,13 @@
                         <label class="form-check-label" for="inlineCheckbox2">Sauna</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="Hidromasaje" name="Hidromasaje" value="Hidromasaje">
+                        <input class="form-check-input" type="checkbox" id="Hidromasaje" name="Hidromasaje"
+                               value="Hidromasaje">
                         <label class="form-check-label" for="inlineCheckbox2">Hidromasaje</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="Room-Service" name="Room-Service"  value="Room-Service">
+                        <input class="form-check-input" type="checkbox" id="Room-Service" name="Room-Service"
+                               value="Room-Service">
                         <label class="form-check-label" for="inlineCheckbox2">Room Service</label>
                     </div>
                     <div class="form-row mt-2">
