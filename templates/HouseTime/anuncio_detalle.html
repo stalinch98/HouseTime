@@ -57,7 +57,7 @@
 <div class="container mt-4">
     <div class="row">
         {% for j in anuncio %}
-        <div class="col-12 col-sm-6">
+        <div class="col-12 col-sm-6 mt-4">
             {% for k in imagen %}
             <img class="img-fluid" src="{% static 'imagenes/{{ k.nombre_imagen }}' %}" alt="">
             {% endfor %}
@@ -72,11 +72,9 @@
                 <li>A 20m de la playa</li>
                 <li>Amoblado</li>
                 <li>Cocina</li>
-
-                <p class="card-text">{{ j.ambientes }}</p>
-                <p class="card-text">{{ j.servicios }}</p>
-
             </ul>
+            <p class="card-text">{{ j.ambientes }}</p>
+            <p class="card-text">{{ j.servicios }}</p>
             {% if j.precio_oferta != None %}
             <h3>Precio de oferta: <span class="badge badge-secondary">{{ j.precio_oferta }}$</span></h3>
             {% else %}
