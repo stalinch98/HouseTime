@@ -342,54 +342,55 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form method="POST" action="{% url 'cotizar' %}">
+                    {% csrf_token %}
                     <div class="form-row">
                         <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control" placeholder="Nombre">
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre">
                         </div>
                         <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control" placeholder="Apellido">
+                            <input type="text" class="form-control" placeholder="Apellido" name="apellido">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control" placeholder="Ci">
+                            <input type="text" class="form-control" placeholder="Ci" name="cedula">
                         </div>
                         <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control" placeholder="Correo">
+                            <input type="text" class="form-control" placeholder="Correo" name="correo">
                         </div>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <input class="form-check-input" type="checkbox" id="Piscina" name="Piscina" value="Piscina">
                         <label class="form-check-label" for="inlineCheckbox1">Piscina</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <input class="form-check-input" type="checkbox" id="Parqueadero" name="Parqueadero" value="Parqueadero">
                         <label class="form-check-label" for="inlineCheckbox2">Parqueadero</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <input class="form-check-input" type="checkbox" id="Wifi" name="Wifi" value="Wifi">
                         <label class="form-check-label" for="inlineCheckbox2">Wifi</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <input class="form-check-input" type="checkbox" id="TV-Cable" name="TV-Cable"  value="TV-Cable">
                         <label class="form-check-label" for="inlineCheckbox2">TV-Cable</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <input class="form-check-input" type="checkbox" id="Sauna" name="Sauna" value="Sauna">
                         <label class="form-check-label" for="inlineCheckbox2">Sauna</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <input class="form-check-input" type="checkbox" id="Hidromasaje" name="Hidromasaje" value="Hidromasaje">
                         <label class="form-check-label" for="inlineCheckbox2">Hidromasaje</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <input class="form-check-input" type="checkbox" id="Room-Service" name="Room-Service"  value="Room-Service">
                         <label class="form-check-label" for="inlineCheckbox2">Room Service</label>
                     </div>
                     <div class="form-row mt-2">
                         <div class="col">
-                            <button type="button" class="btn btn-success btn-block">Cotizar</button>
+                            <button type="submit" class="btn btn-success btn-block">Cotizar</button>
                         </div>
                     </div>
                 </form>

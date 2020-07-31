@@ -27,6 +27,7 @@ class Cotizar( models.Model ):
     nombre = models.CharField( max_length=50 )
     apellido = models.CharField( max_length=50 )
     cedula = models.IntegerField()
+    correo = models.CharField( max_length=100 )
     opciones = models.CharField( max_length=500 )
 
 

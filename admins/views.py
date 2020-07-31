@@ -7,6 +7,7 @@ from admins.models import Contacto as contact
 from admins.models import Blog as bl
 from admins.models import Imagen as im
 from admins.models import Ubicacion as ub
+from admins.models import Cotizar as cot
 
 
 def QuienesSomos(request):
@@ -30,11 +31,12 @@ def QuienesSomos(request):
 
 
 def Anuncios(request):
-    anuncios = a.objects.filter(oferta=0).values()
+    anuncios = a.objects.filter( oferta=0 ).values()
     ubicaciones = ub.objects.all().values()
     imagenes = im.objects.all().values()
 
-    return render( request, 'housetime/anuncios.html', {'anuncios': anuncios, 'imagenes': imagenes, 'ubicaciones': ubicaciones} )
+    return render( request, 'housetime/anuncios.html',
+                   {'anuncios': anuncios, 'imagenes': imagenes, 'ubicaciones': ubicaciones} )
 
 
 def Contacto(request):
@@ -48,7 +50,7 @@ def Promociones(request):
 
 def Blog(request):
     descripcion = emp.objects.values( 'descripcion_blog' )
-    opiniones = bl.objects.values('nombre_usuario','comentarios').order_by('-id_blog')
+    opiniones = bl.objects.values( 'nombre_usuario', 'comentarios' ).order_by( '-id_blog' )
 
     for i in descripcion[0].values():
         descripcion2 = i
@@ -97,6 +99,7 @@ def savecontact(request):
 
     return render( request, 'housetime/contacto.html' )
 
+
 def saveopinion(request):
     blog = bl()
     if request.method == 'POST':
@@ -108,3 +111,30 @@ def saveopinion(request):
         blog = bl()
 
     return render( request, 'housetime/blog.html' )
+
+
+def savecotizacion(request):
+    cotizar = cot()
+    if request.method == 'POST':
+        opciones = []
+        opciones.append( request.POST.get( 'Piscina' ) )
+        opciones.append( request.POST.get( 'Parqueadero' ) )
+        opciones.append( request.POST.get( 'Wifi' ) )
+        opciones.append( request.POST.get( 'TV-Cable' ) )
+        opciones.append( request.POST.get( 'Sauna' ) )
+        opciones.append( request.POST.get( 'Hidromasaje' ) )
+        opciones.append( request.POST.get( 'Room-Service' ) )
+        for i in opciones:
+            opciones.remove( None )
+
+        cotizar.nombre = request.POST['nombre']
+        cotizar.apellido = request.POST['apellido']
+        cotizar.cedula = request.POST['cedula']
+        cotizar.correo = request.POST['nombre']
+        cotizar.opciones = opciones
+        cotizar.save()
+        return redirect( 'housetime' )
+    else:
+        cotizar = cot()
+
+    return render( request, 'housetime/anuncios.html' )
