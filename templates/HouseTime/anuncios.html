@@ -143,6 +143,9 @@
                                     <div class="col-12 col-lg-6 col-md-6 mt-1">
                                         <select name="ubicacion" id="" class="form-control">
                                             <option class="form-control" value="">Selecciona una Ubicacion</option>
+                                            {% for j in ubicaciones %}
+                                            <option class="form-control" value="{{ j.id_ubicacion }}">{{ j.nombre_ubicacion }}</option>
+                                            {% endfor %}
                                         </select>
                                     </div>
                                     <div class="col-12 col-lg-6 col-md-6 mt-1">
