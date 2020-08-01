@@ -57,11 +57,12 @@
             </div>
         </div>
         <div class="row">
+
             <div class="col-12 col-lg">
                 <div class="container-fluid mt-2">
                     <div class="row">
                         <div class="col-12 col-lg-6 pb-2">
-                            <select id="buscar" class="custom-select">
+                            <select id="buscar" name="opcion" class="custom-select">
                                 <option selected>Buscar por...</option>
                                 <option value="nombre">Nombre</option>
                                 <option value="precio">Precio</option>
@@ -81,11 +82,12 @@
                 <div class="container-fluid mt-2" id="nombre">
                     <div class="row">
                         <div class="col-12 col-lg-6 col-md-6">
-                            <form>
+                            <form method="POST" action="{% url 'buscar-nombre' %}">
+                                {% csrf_token %}
                                 <div class="form-row">
                                     <div class="col-12 col-lg-6 col-md-6 mt-1">
                                         <input class="form-control" type="text" placeholder="Nombre"
-                                               aria-label="Search">
+                                               aria-label="Search" name="nombre">
                                     </div>
                                     <div class="col-12 col-lg-6 col-md-6 mt-1">
                                         <button class="btn btn-success btn-rounded btn-block" type="submit">Buscar
@@ -100,11 +102,12 @@
                 <div class="container-fluid mt-1" id="precio">
                     <div class="row">
                         <div class="col-12 col-lg-6 col-md-6">
-                            <form>
+                            <form method="POST" action="{% url 'buscar-precio' %}">
+                                {% csrf_token %}
                                 <div class="form-row">
                                     <div class="col-12 col-lg-6 col-md-6 mt-1">
                                         <input class="form-control" type="text" placeholder="Precio"
-                                               aria-label="Search">
+                                               aria-label="Search" name="precio">
                                     </div>
                                     <div class="col-12 col-lg-6 col-md-6 mt-1">
                                         <button class="btn btn-success btn-rounded btn-block" type="submit">Buscar
@@ -119,11 +122,13 @@
                 <div class="container-fluid mt-1" id="ubicacion">
                     <div class="row">
                         <div class="col-12 col-lg-6 col-md-6">
-                            <form>
+                            <form method="POST" action="{% url 'buscar-ubicacion' %}">
+                                {% csrf_token %}
                                 <div class="form-row">
                                     <div class="col-12 col-lg-6 col-md-6 mt-1">
                                         <select name="ubicacion" class="form-control">
-                                            <option class="form-control" value="">Selecciona una Ubicacion</option>
+                                            <option class="form-control" name="ubicacion">Selecciona una Ubicacion
+                                            </option>
                                             {% for j in ubicaciones %}
                                             <!-- Nunca mover el option que contiene consulta de la base por nada -->
                                             <option class="form-control" value="{{ j.id_ubicacion }}">{{ j.nombre_ubicacion }}
@@ -144,41 +149,42 @@
                 <div class="container-fluid mt-1" id="servicios">
                     <div class="row">
                         <div class="col-12 col-lg-6 col-md-6">
-                            <form>
+                            <form method="POST" action="{% url 'buscar-servicios' %}">
+                                {% csrf_token %}
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
-                                           value="option1">
-                                    <label class="form-check-label" for="inlineCheckbox1">Piscina</label>
+                                    <input class="form-check-input" type="checkbox" id="Wifi" name="Wifi" value="Wifi">
+                                    <label class="form-check-label">Wifi</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                           value="option2">
-                                    <label class="form-check-label" for="inlineCheckbox2">Parqueadero</label>
+                                    <input class="form-check-input" type="checkbox" id="Parqueadero" name="Parqueadero"
+                                           value="Parqueadero">
+                                    <label class="form-check-label">Parqueadero</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                           value="option2">
-                                    <label class="form-check-label" for="inlineCheckbox2">Wifi</label>
+                                    <input class="form-check-input" type="checkbox" id="Piscina" name="Piscina"
+                                           value="Piscina">
+                                    <label class="form-check-label">Piscina</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                           value="option2">
-                                    <label class="form-check-label" for="inlineCheckbox2">TV-Cable</label>
+                                    <input class="form-check-input" type="checkbox" id="TV-Cable" name="TV-Cable"
+                                           value="TV-Cable">
+                                    <label class="form-check-label">TV-Cable</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                           value="option2">
-                                    <label class="form-check-label" for="inlineCheckbox2">Sauna</label>
+                                    <input class="form-check-input" type="checkbox" id="Sauna" name="Sauna"
+                                           value="Sauna">
+                                    <label class="form-check-label">Sauna</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                           value="option2">
-                                    <label class="form-check-label" for="inlineCheckbox2">Hidromasaje</label>
+                                    <input class="form-check-input" type="checkbox" id="Hidromasaje" name="Hidromasaje"
+                                           value="Hidromasaje">
+                                    <label class="form-check-label">Hidromasaje</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                           value="option2">
-                                    <label class="form-check-label" for="inlineCheckbox2">Room Service</label>
+                                    <input class="form-check-input" type="checkbox" id="Room-Service"
+                                           name="Room-Service"
+                                           value="Room-Service">
+                                    <label class="form-check-label">Room Service</label>
                                 </div>
                                 <div class="form-row mt-2">
                                     <div class="col">
@@ -193,15 +199,16 @@
                 <div class="container-fluid mt-1" id="capacidad">
                     <div class="row">
                         <div class="col-12 col-lg-6 col-md-6">
-                            <form>
+                            <form method="POST" action="{% url 'buscar-capacidad' %}">
+                                {% csrf_token %}
                                 <div class="form-row">
                                     <div class="col-12 col-lg-6 col-md-6 mt-1">
                                         <input class="form-control" type="text" placeholder="# de Adultos"
-                                               aria-label="Search">
+                                               aria-label="Search" name="n_adultos">
                                     </div>
                                     <div class="col-12 col-lg-6 col-md-6 mt-1">
                                         <input class="form-control" type="text" placeholder="# de Niños"
-                                               aria-label="Search">
+                                               aria-label="Search" name="n_ninos">
                                     </div>
                                     <div class="col-12 col-lg-6 col-md-6 mt-1">
                                         <button class="btn btn-success btn-rounded btn-block" type="submit">Buscar

@@ -17,4 +17,9 @@ urlpatterns = [
     path( 'housetime/new-comment/', views.savecontact, name="nuevo-comentario" ),
     path( 'housetime/opiniones/', views.saveopinion, name="opiniones" ),
     path( 'housetime/cotizar/', views.savecotizacion, name="cotizar" ),
+    path( 'housetime/searchforname/', views.searchforname, name="buscar-nombre" ),
+    path( 'housetime/searchforprice/', views.searchforprice, name="buscar-precio" ),
+    path( 'housetime/searchforubication/', views.searchforubication, name="buscar-ubicacion" ),
+    path( 'housetime/searchforservices/', views.searchforservices, name="buscar-servicios" ),
+    path( 'housetime/searchforcapacity/', views.searchforcapacity, name="buscar-capacidad" ),
 ]
