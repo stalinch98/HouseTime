@@ -59,21 +59,15 @@
         {% for j in anuncio %}
         <div class="col-12 col-sm-6 mt-4">
             {% for k in imagen %}
-            <img class="img-fluid" src="{% static 'imagenes/{{ k.nombre_imagen }}' %}" alt="">
+            <img class="img-fluid" src="/media/{{ k.nombre_imagen }}" alt="">
             {% endfor %}
         </div>
         <div class="col-12 col-sm-6">
             <h3 class="my-3">{{ j.titulo }}</h3>
             <p>{{ j.descripcion }}</p>
-            <h3 class="my-3">Detalles</h3>
-            <ul>
-                <li>Piscina</li>
-                <li>Area verde</li>
-                <li>A 20m de la playa</li>
-                <li>Amoblado</li>
-                <li>Cocina</li>
-            </ul>
+            <h3 class="my-3">Ambientes</h3>
             <p class="card-text">{{ j.ambientes }}</p>
+            <h3 class="my-3">Servicios</h3>
             <p class="card-text">{{ j.servicios }}</p>
             {% if j.precio_oferta != None %}
             <h3>Precio de oferta: <span class="badge badge-secondary">{{ j.precio_oferta }}$</span></h3>

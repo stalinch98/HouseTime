@@ -48,7 +48,8 @@ def Contacto(request):
 
 def Promociones(request):
     promociones = a.objects.filter( oferta=1 ).values()
-    return render( request, 'housetime/promociones.html', {'promociones': promociones} )
+    imagenes = im.objects.all().values()
+    return render( request, 'housetime/promociones.html', {'promociones': promociones, 'imagenes': imagenes} )
 
 
 def Blog(request):

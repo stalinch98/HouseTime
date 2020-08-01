@@ -33,12 +33,12 @@ class Cotizar( models.Model ):
 
 class Imagen( models.Model ):
     id_imagen = models.AutoField( primary_key=True )
-    nombre_imagen = models.CharField( max_length=50 )
+    nombre_imagen = models.ImageField(upload_to='admins/photos')
 
 
 class SubImagenes( models.Model ):
     id_sub_imagen = models.AutoField( primary_key=True )
-    nombre_imagen = models.CharField( max_length=50 )
+    nombre_imagen = models.ImageField(upload_to='admins/photos')
     id_imagen = models.ForeignKey( Imagen, models.DO_NOTHING, db_column='id_imagen' )
 
 
