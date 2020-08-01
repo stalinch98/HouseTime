@@ -154,21 +154,25 @@ def savecotizacion(request):
 def searchforname(request):
     nombre = request.POST['nombre']
     anuncios = a.objects.filter( Q( descripcion__contains=nombre ) & Q( oferta=0 ) ).values()
-    return render( request, 'housetime/busqueda_nombre.html', {'anuncios': anuncios} )
+    imagenes = im.objects.all().values()
+
+    return render( request, 'housetime/busqueda_nombre.html', {'anuncios': anuncios, 'imagenes': imagenes} )
 
 
 def searchforprice(request):
     precio = request.POST['precio']
     anuncios = a.objects.filter( Q( precio_dia__lte=precio ) & Q( oferta=0 ) ).values()
+    imagenes = im.objects.all().values()
 
-    return render( request, 'housetime/busqueda_precio.html', {'anuncios': anuncios} )
+    return render( request, 'housetime/busqueda_precio.html', {'anuncios': anuncios, 'imagenes': imagenes} )
 
 
 def searchforubication(request):
     ubicacion = request.POST['ubicacion']
     anuncios = a.objects.filter( Q( id_ubicacion=ubicacion ) & Q( oferta=0 ) ).values()
+    imagenes = im.objects.all().values()
 
-    return render( request, 'housetime/busqueda_ubicacion.html', {'anuncios': anuncios} )
+    return render( request, 'housetime/busqueda_ubicacion.html', {'anuncios': anuncios, 'imagenes': imagenes} )
 
 
 def searchforservices(request):
@@ -189,8 +193,9 @@ def searchforservices(request):
     opciones = opciones.rstrip( ',' )
 
     anuncios = a.objects.filter( Q( servicios__contains=opciones ) & Q( oferta=0 ) ).values()
+    imagenes = im.objects.all().values()
 
-    return render( request, 'housetime/busqueda_servicios.html', {'anuncios': anuncios} )
+    return render( request, 'housetime/busqueda_servicios.html', {'anuncios': anuncios, 'imagenes': imagenes} )
 
 
 def searchforcapacity(request):
@@ -203,5 +208,6 @@ def searchforcapacity(request):
     capacidad = int( adultos ) + int( ninos )
     print( capacidad )
     anuncios = a.objects.filter( Q( max_personas__lte=capacidad ) & Q( oferta=0 ) ).values()
+    imagenes = im.objects.all().values()
 
-    return render( request, 'housetime/busqueda_capacidad.html', {'anuncios': anuncios} )
+    return render( request, 'housetime/busqueda_capacidad.html', {'anuncios': anuncios, 'imagenes': imagenes} )
