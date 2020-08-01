@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
           integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
           crossorigin=""/>
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <title>Detalle Anuncio</title>
@@ -59,7 +60,13 @@
         {% for j in anuncio %}
         <div class="col-12 col-sm-6 mt-4">
             {% for k in imagen %}
-            <img class="img-fluid" src="/media/{{ k.nombre_imagen }}" alt="">
+            <a href="/media/{{ k.nombre_imagen }}" data-fancybox="gallery5 " data-caption="">
+                <img class="img-fluid" src="/media/{{ k.nombre_imagen }}" alt="">
+            </a>
+            {% endfor %}
+            {% for n in subimagenes %}
+            <a href="/media/{{ n.nombre_imagen }}" data-fancybox="gallery5 " data-caption="">
+            </a>
             {% endfor %}
         </div>
         <div class="col-12 col-sm-6">
@@ -186,6 +193,7 @@
 <script text="text/javascript" src="{% static 'js/script_jquery.js' %}"></script>
 <script src="{% static 'js/script.js' %}"></script>
 <script src="{% static 'js/mapa.js' %}"></script>
+<script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
 </body>
 
 </html>

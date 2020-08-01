@@ -11,6 +11,7 @@ from admins.models import Blog as bl
 from admins.models import Imagen as im
 from admins.models import Ubicacion as ub
 from admins.models import Cotizar as cot
+from admins.models import SubImagenes as subimg
 
 
 def QuienesSomos(request):
@@ -72,8 +73,9 @@ def CompraDetalle(request):
     anuncio = a.objects.filter( id_anuncio=id ).values()
     coordenadas = ub.objects.filter( id_ubicacion=id ).values()
     imagen = im.objects.filter( id_imagen=id ).values()
+    subimagenes = subimg.objects.filter( id_imagen=id ).values()
     return render( request, 'housetime/anuncio_detalle.html',
-                   {'anuncio': anuncio, 'coordenadas': coordenadas, 'imagen': imagen} )
+                   {'anuncio': anuncio, 'coordenadas': coordenadas, 'imagen': imagen, 'subimagenes': subimagenes} )
 
 
 def get_housetime(request):
