@@ -3,10 +3,94 @@
   <component name="ChangeListManager">
     <list default="true" id="3f0782f9-01c5-48f4-b14c-e53224cabbc7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admins/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/admins/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admins/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/admins/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hipermedial/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hipermedial/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hipermedial/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hipermedial/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/LAPTOP4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/icons8-person-64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/p1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/p10.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/p11.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/p12.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/p13.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/p14.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/p15.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/p2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/p3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/p4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/p5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/p6.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/p7.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/p8.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/p9.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/portada1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp10_1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp10_2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp10_3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp10_4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp10_5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp11_1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp11_2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp11_3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp11_4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp11_5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp12_1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp12_2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp12_3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp12_4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp12_5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp13_1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp13_2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp13_3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp13_4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp13_5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp14_1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp14_2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp14_3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp14_4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp14_5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp1_1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp1_2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp1_3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp1_4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp1_5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp2_1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp2_2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp2_3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp2_4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp2_5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp3_1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp3_2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp3_3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp3_4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp3_5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp4_1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp4_2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp4_3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp4_4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp4_5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp5_1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp5_2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp5_3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp5_4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp5_5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp6_1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp6_2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp6_3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp6_4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp6_5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp7_1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp7_2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp7_3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp7_4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp7_5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp8_1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp8_2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp8_3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp8_4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp8_5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp9_1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp9_2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp9_3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp9_4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imagenes/sp9_5.PNG" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
