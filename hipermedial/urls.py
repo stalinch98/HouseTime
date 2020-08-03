@@ -23,4 +23,5 @@ urlpatterns = [
                   path( 'housetime/searchforubication/', views.searchforubication, name="buscar-ubicacion" ),
                   path( 'housetime/searchforservices/', views.searchforservices, name="buscar-servicios" ),
                   path( 'housetime/searchforcapacity/', views.searchforcapacity, name="buscar-capacidad" ),
+                  path( 'housetime/reserva/', views.reservation, name="reserva" ),
               ] + static( settings.MEDIA_URL, document_root=settings.MEDIA_ROOT )

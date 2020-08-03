@@ -125,45 +125,43 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                {% for g in anuncio %}
+                <form method="POST" action="{% url 'reserva' %}">
+                    {% csrf_token %}
+                    <div class="coordenadas">
+                        <input type="text" name="id_anuncio" value="{{ g.id_anuncio }}">
+                    </div>
                     <div class="form-row">
                         <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control" placeholder="Nombre">
+                            <input type="text" class="form-control" placeholder="Nombres y Apellidos" name="nombres">
                         </div>
                         <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control" placeholder="Apellido">
+                            <input type="text" class="form-control" placeholder="Ci" name="cedula">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control" placeholder="Ci">
+                            <input type="text" class="form-control" placeholder="# Celular" name="celular">
                         </div>
                         <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control" placeholder="# Celular">
+                            <input type="text" class="form-control" placeholder="# de Adultos" name="nadultos">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control" placeholder="# de Adultos">
+                            <input type="text" class="form-control" placeholder="# de Niños" name="nninos">
                         </div>
                         <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control" placeholder="# de Niños">
+                            <input type="text" class="form-control" placeholder="# de Dias" name="ndias">
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-12 col-md-6">
-                            <input type="text" class="form-control" placeholder="# de Dias">
-                        </div>
-                    </div>
-                    <div class="alert alert-warning mt-2" role="alert">
-                        Su total es:
                     </div>
                     <div class="form-row">
                         <div class="col">
-                            <button type="button" class="btn btn-success btn-block">Comprar</button>
+                            <button type="submit" class="btn btn-success btn-block">Proceder a Pagar</button>
                         </div>
                     </div>
                 </form>
+                {% endfor %}
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

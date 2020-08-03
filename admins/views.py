@@ -12,6 +12,7 @@ from admins.models import Imagen as im
 from admins.models import Ubicacion as ub
 from admins.models import Cotizar as cot
 from admins.models import SubImagenes as subimg
+from admins.models import Reserva as rv
 
 
 def QuienesSomos(request):
@@ -211,3 +212,42 @@ def searchforcapacity(request):
     imagenes = im.objects.all().values()
 
     return render( request, 'housetime/busqueda_capacidad.html', {'anuncios': anuncios, 'imagenes': imagenes} )
+
+
+def reservation(request):
+    reserva = rv()
+    anuncio = request.POST['id_anuncio']
+    print( anuncio )
+    precio = a.objects.filter( id_anuncio=anuncio ).values( 'precio_dia' )
+    precio_oferta = a.objects.filter( id_anuncio=anuncio ).values( 'precio_oferta' )
+
+    for i in precio:
+        gato = i['precio_dia']
+
+    for j in precio_oferta:
+        perro = j['precio_oferta']
+
+    if perro == None:
+        precio_final = gato
+
+    if perro != None:
+        precio_final = perro
+
+    if request.method == 'POST':
+        valor = anuncio
+        n_dias = request.POST['ndias']
+        reserva.nombre = request.POST['nombres']
+        reserva.cedula = request.POST['cedula']
+        reserva.telefono = request.POST['celular']
+        reserva.n_adultos = request.POST['nadultos']
+        reserva.n_ninos = request.POST['nninos']
+        reserva.n_dias = n_dias
+        reserva.precio_total = float( precio_final ) * float( n_dias )
+        reserva.id_anuncio_id = valor
+        reserva.save()
+
+        return redirect( 'housetime' )
+    else:
+        reserva = rv()
+
+    return render( request, 'housetime/anuncios.html' )
