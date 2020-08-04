@@ -39,6 +39,7 @@ INSTALLED_APPS = [
 
     # Local Apps
     'admins',
+    'paypal.standard.ipn',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,6 @@ STATICFILES_FINDERS = [
 
 MEDIA_ROOT = os.path.join( BASE_DIR, 'media' )
 MEDIA_URL = '/media/'
+
+PAYPAL_RECEIVER_EMAIL = 'joelsandoval1998@hotmail.com'
+PAYPAL_TEST = True

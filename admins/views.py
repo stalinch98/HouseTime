@@ -13,6 +13,9 @@ from admins.models import Ubicacion as ub
 from admins.models import Cotizar as cot
 from admins.models import SubImagenes as subimg
 from admins.models import Reserva as rv
+from paypal.standard.forms import PayPalPaymentsForm
+from django.views.decorators.csrf import csrf_exempt
+from django.db.models import Max
 
 
 def QuienesSomos(request):
@@ -246,8 +249,44 @@ def reservation(request):
         reserva.id_anuncio_id = valor
         reserva.save()
 
-        return redirect( 'housetime' )
+        id = rv.objects.aggregate( Max( 'id_reserva' ) )
+        id_reserv = id['id_reserva__max']
+        reserv = rv.objects.filter( id_reserva=id_reserv ).values()
+        producto = a.objects.filter( id_anuncio=valor ).values()
+
+        for i in producto:
+            img = i['id_imagen_id']
+
+        photo = im.objects.filter( id_imagen=img ).values()
+        return render( request, 'housetime/pagar.html', {'reserva': reserv, 'producto': producto, 'photo': photo} )
     else:
         reserva = rv()
 
     return render( request, 'housetime/anuncios.html' )
+
+
+def home(request):
+    item = request.POST['item']
+    precio = request.POST['precio']
+    paypal_dict = {
+        "business": "joelsandoval1998@hotmail.com",
+        "currency_code": "USD",
+        "item_name": str( item ),
+        "amount": str( precio ),
+        "notify_url": "",
+        "return_url": "",
+        "cancel_return": "",
+    }
+    form = PayPalPaymentsForm( initial=paypal_dict )
+    return render( request, 'housetime/paypal.html', {'form': form} )
+
+
+@csrf_exempt
+def paypal_return(request):
+    args = {'post': request.POST, 'get': request.GET}
+    return render( 'housetime/paypal_return.html', args )
+
+
+def paypal_cancel(request):
+    args = {'post': request.POST, 'get': request.GET}
+    return render( 'housetime/paypal_cancel.html', args )

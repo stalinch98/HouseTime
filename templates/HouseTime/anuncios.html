@@ -232,11 +232,11 @@
                         <div id="controlAnuncio-1" class="carousel slide" data-interval="false" data-ride="carousel">
                             <div class="carousel-inner carousel-auncios">
                                 {% for s in imagenes %}
-                                    {% if i.id_imagen_id ==  s.id_imagen  %}
-                                        <div class="carousel-item active">
-                                            <img src="/media/{{ s.nombre_imagen }}" class="d-block w-100" alt="...">
-                                        </div>
-                                    {% endif %}
+                                {% if i.id_imagen_id == s.id_imagen %}
+                                <div class="carousel-item active">
+                                    <img src="/media/{{ s.nombre_imagen }}" class="d-block w-100" alt="...">
+                                </div>
+                                {% endif %}
                                 {% endfor %}
                             </div>
                         </div>

@@ -24,4 +24,7 @@ urlpatterns = [
                   path( 'housetime/searchforservices/', views.searchforservices, name="buscar-servicios" ),
                   path( 'housetime/searchforcapacity/', views.searchforcapacity, name="buscar-capacidad" ),
                   path( 'housetime/reserva/', views.reservation, name="reserva" ),
+                  path( 'housetime/paypal/', views.home, name="pagar" ),
+                  # path( 'housetime/return/', views.paypal_return, name="regresar" ),
+                  # path( 'housetime/cancel/', views.paypal_cancel, name="cancelar" ),
               ] + static( settings.MEDIA_URL, document_root=settings.MEDIA_ROOT )
