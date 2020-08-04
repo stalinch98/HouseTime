@@ -9,3 +9,5 @@ toor
 Las consultas orm devuelven un diccionario
 from django.db.models import Max,Q
 Q para consultas con and y or
+
+https://github.com/stalinchiguano98/Proyecto_Integrador.git
