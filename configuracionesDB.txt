@@ -5,3 +5,7 @@ pymysql.install_as_MySQLdb()
 
 #poner la clave en setting
 toor
+
+Las consultas orm devuelven un diccionario
+from django.db.models import Max,Q
+Q para consultas con and y or
